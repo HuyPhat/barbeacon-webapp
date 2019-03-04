@@ -1,0 +1,26 @@
+[ignore]
+.*/build/.*
+
+[include]
+./src/
+
+[libs]
+flow-typed
+
+[lints]
+
+[options]
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=src
+module.name_mapper='^components\(.*\)$' -> '<PROJECT_ROOT>/src/components/\1'
+module.name_mapper='^pages\(.*\)$' -> '<PROJECT_ROOT>/src/pages/\1'
+; module.system.node.resolve_dirname=node_modules
+
+; esproposal.decorators=ignore
+; esproposal.class_static_fields=enable
+; esproposal.class_instance_fields=enable
+
+; suppress_type=$FlowIssue
+; suppress_type=$FlowFixMe
+
+[strict]
