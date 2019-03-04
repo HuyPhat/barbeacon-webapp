@@ -5,16 +5,18 @@ const path = require("path");
 process.env.BROWSER = "none";
 
 module.exports = {
+  babel: {
+    plugins: [["@babel/plugin-proposal-decorators", { legacy: true }]]
+  },
   plugins: [
-    // { plugin: CracoAntDesignPlugin },
     {
       plugin: CracoAntDesignPlugin,
       options: {
         customizeThemeLessPath: path.join(
           __dirname,
-          "src/style/antd.customize.less",
-        ),
-      },
-    },
-  ],
+          "src/style/antd.customize.less"
+        )
+      }
+    }
+  ]
 };
